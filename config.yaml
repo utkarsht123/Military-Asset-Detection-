@@ -1,0 +1,24 @@
+# config.yaml
+# Dataset paths
+data:
+  au_air_sampled_root: "data/au-air/au-air-sampled"
+  au_air_sampled_annotations: "data/au-air/au-air-sampled/annotations.filtered.json"
+  hit_uav_root: "data/hit-uav"
+
+# Model configuration
+model:
+  name: "mobilevit_s" # From timm library
+  num_classes: 8      # AU-AIR has 8 classes
+  pretrained: true
+
+# Training configuration
+training:
+  device: "cpu"
+  batch_size: 2          # Small batch size for laptops
+  accumulation_steps: 8  # Effective batch size = 2 * 8 = 16
+  epochs: 10
+  learning_rate: 0.001
+  
+# Evaluation configuration
+evaluation:
+  key_classes: ['Person', 'Car', 'UAV', 'Helicopter'] # Focus on these
