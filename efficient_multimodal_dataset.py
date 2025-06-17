@@ -2,6 +2,7 @@
 import os
 import cv2
 import torch
+import numpy as np
 from torch.utils.data import Dataset
 from lightweight_sensor_parser import parse_annotations
 from cpu_augmentation import get_cpu_augmentations, get_thermal_augmentations
@@ -66,7 +67,7 @@ class EfficientMultimodalDataset(Dataset):
         else:
             # Create a dummy black image if no thermal data is available
             h, w, _ = rgb_image.shape
-            thermal_image = torch.zeros((1, h, w), dtype=torch.uint8).numpy()
+            thermal_image = np.zeros((h, w), dtype=np.uint8)
 
         # 3. Apply Transformations
         # Note: We are not using PIL Images here to avoid an extra conversion step.
