@@ -60,6 +60,29 @@ class SimpleCNN(nn.Module):
         
         return x
 
+    def predict(self, X):
+        """
+        Predict class indices for input tensor X.
+        
+        Args:
+            X (torch.Tensor): Input tensor of shape (batch_size, 3, 32, 32)
+            
+        Returns:
+            torch.Tensor: Predicted class indices (batch_size,)
+        """
+        # Ensure model is in evaluation mode
+        self.eval()
+        
+        # Disable gradient calculations for inference
+        with torch.no_grad():
+            # Perform forward pass to get logits
+            logits = self(X)
+            
+            # Get predicted class indices
+            predictions = torch.argmax(logits, dim=1)
+            
+        return predictions
+
 def quantize_model_int8(model, calibration_dataloader):
     """
     Perform INT8 static quantization on a PyTorch model.
