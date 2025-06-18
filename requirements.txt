@@ -15,4 +15,11 @@ torchvision
 scikit-plot
 # For model export and inference benchmarking
 onnx
-onnxruntime 
+onnxruntime
+# For FastAPI backend and Streamlit demo
+fastapi
+uvicorn
+python-multipart
+requests
+Pillow
+plotly 
