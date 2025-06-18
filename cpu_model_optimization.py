@@ -48,7 +48,7 @@ class SimpleCNN(nn.Module):
         x = self.pool(self.relu(self.conv3(x)))
         
         # Flatten the output
-        x = x.view(x.size(0), -1)
+        x = x.reshape(x.size(0), -1)
         
         # Fully connected layers
         x = self.relu(self.fc1(x))
