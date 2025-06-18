@@ -7,4 +7,12 @@ seaborn
 # For profiling
 memory_profiler
 # For the dashboard
-streamlit 
+streamlit
+# For PyTorch model optimization
+torch
+torchvision
+# For detailed visual analysis
+scikit-plot
+# For model export and inference benchmarking
+onnx
+onnxruntime 
