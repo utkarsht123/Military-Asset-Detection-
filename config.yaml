@@ -2,6 +2,7 @@
 # Dataset paths
 data:
   au_air_sampled_root: "data/au-air/au-air-sampled"
+  au_air_test_root: "data/au-air/au-air-test"
   au_air_sampled_annotations: "data/au-air/au-air-sampled/annotations.filtered.json"
   hit_uav_root: "data/hit-uav"
 
